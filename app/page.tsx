@@ -1,10 +1,16 @@
 import Nav from "@/components/Nav";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import AnimatedGradient from "@/components/AnimatedGradient";
 import { cardData } from "@/data/caseStudies";
 
 export default function Home() {
   return (
     <>
+      {/* Fixed gradient background — home page only */}
+      <AnimatedGradient />
+
+      {/* All content sits above the gradient */}
+      <div className="relative" style={{ zIndex: 1 }}>
       <Nav />
 
       {/* ── HERO ── */}
@@ -148,6 +154,7 @@ export default function Home() {
           <p className="text-sm text-muted">© 2025 Valerio</p>
         </div>
       </footer>
+      </div>{/* end content wrapper */}
     </>
   );
 }
