@@ -17,10 +17,10 @@ export interface CaseStudy {
 
 export interface CardData {
   title: string;
-  hook: string;
+  hook?: string;
   company: string;
+  tags?: string[];
   slug?: string;
-  comingSoon?: boolean;
 }
 
 const measurementEcosystem: CaseStudy = {
@@ -154,28 +154,25 @@ export const caseStudies: CaseStudy[] = [measurementEcosystem];
 
 export const cardData: CardData[] = [
   {
-    title: "Designing a more coherent measurement ecosystem",
-    hook: "Redesigning how advertisers understand and configure conversion tracking",
-    company: "Google Ads",
+    title: "Built to bend: untangling campaign creation in Google Ads",
+    company: "Google",
+    tags: ["Frameworks", "Monetization", "Configuration"],
+  },
+  {
+    title: "Creating a more coherent measurement ecosystem",
+    company: "Google",
+    tags: ["Measurement", "Complex systems", "Frameworks"],
     slug: "measurement-ecosystem",
   },
   {
-    title: "Built to bend: untangling campaign creation in Google Ads",
-    hook: "Placeholder — replace with real content later",
-    company: "Google Ads",
-    comingSoon: true,
-  },
-  {
-    title: "Coming soon",
-    hook: "",
+    title: "The good after the bad: designing service recovery",
     company: "Sky",
-    comingSoon: true,
+    tags: ["Customer support", "Self-service", "Mobile"],
   },
   {
-    title: "Coming soon",
-    hook: "",
-    company: "",
-    comingSoon: true,
+    title: "What's on tonight: The invisible architecture of content discovery",
+    company: "Sky",
+    tags: ["Discovery", "Content systems"],
   },
 ];
 

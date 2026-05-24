@@ -8,7 +8,7 @@ export default function CaseStudyCard({ card }: { card: CardData }) {
       className={`group relative bg-card-bg border border-card-border rounded-xl overflow-hidden transition-all duration-300 ${
         isClickable
           ? "hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 cursor-pointer"
-          : "opacity-70"
+          : ""
       }`}
     >
       {/* Cover image area */}
@@ -23,22 +23,25 @@ export default function CaseStudyCard({ card }: { card: CardData }) {
         )}
 
         {/* Title */}
-        <h3
-          className={`font-serif text-xl leading-snug text-near-black ${
-            card.comingSoon ? "text-muted" : ""
-          }`}
-        >
+        <h3 className="font-serif text-[1.1rem] leading-snug text-near-black">
           {card.title}
         </h3>
 
-        {/* Hook */}
-        {card.hook && (
-          <p className="mt-2 text-sm italic text-muted leading-relaxed">
-            {card.hook}
-          </p>
+        {/* Tags */}
+        {card.tags && card.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {card.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[11px] font-sans text-muted border border-card-border rounded px-2 py-0.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         )}
 
-        {/* Arrow indicator */}
+        {/* Arrow indicator — only on clickable cards */}
         {isClickable && (
           <div className="mt-4 flex items-center gap-1 text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <span>Read case study</span>

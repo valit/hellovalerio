@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import AnimatedGradient from "@/components/AnimatedGradient";
@@ -45,8 +46,8 @@ export default function Home() {
             Case studies
           </p>
 
-          {/* Mobile: horizontal scroll | Desktop: 3-col grid */}
-          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+          {/* Mobile: horizontal scroll | Desktop: 2-col grid */}
+          <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-2 lg:overflow-visible lg:pb-0">
             {cardData.map((card, i) => (
               <div key={i} className="min-w-[300px] snap-start lg:min-w-0">
                 <CaseStudyCard card={card} />
@@ -63,25 +64,50 @@ export default function Home() {
             About
           </p>
 
-          <div className="max-w-[60ch]">
-            <p className="text-[17px] leading-[1.8] text-near-black mb-6">
-              I&rsquo;m a UX design lead with more than 20 years of experience
-              working across digital products, platforms, and design systems.
-              I&rsquo;ve spent much of the last decade at Google, working on the
-              advertising products used by millions of businesses worldwide.
-            </p>
-            <p className="text-[17px] leading-[1.8] text-near-black">
-              I&rsquo;m drawn to complexity &mdash; the kind of problems where
-              the challenge isn&rsquo;t just designing a better interface, but
-              finding the simpler idea hidden inside a complicated system.
-            </p>
-          </div>
+          <div className="bg-card-bg border border-card-border rounded-2xl p-8 lg:p-12">
+            <div className="grid lg:grid-cols-[1fr_280px] gap-10 lg:gap-16 items-start">
+              {/* Bio text */}
+              <div>
+                <p className="text-[17px] leading-[1.8] text-near-black mb-5">
+                  Born in Rome, grown up in London, and now my family and I call
+                  the Bay Area home.
+                </p>
+                <p className="text-[17px] leading-[1.8] text-near-black mb-5">
+                  I spent over 20 years designing digital products &mdash; across
+                  online advertising, broadcast media, and service design. For
+                  much of the last decade, that work has been at Google, helping
+                  shape the advertising tools used by millions of businesses
+                  worldwide.
+                </p>
+                <p className="text-[17px] leading-[1.8] text-near-black">
+                  What drives me is finding the beauty of the simple idea hiding
+                  inside a complicated system &mdash; and building the frameworks
+                  that help products scale without losing their clarity.
+                </p>
 
-          {/* Credentials */}
-          <div className="mt-16 flex flex-col sm:flex-row gap-8 sm:gap-16 text-sm text-muted">
-            <span>20+ years experience</span>
-            <span>Google Ads · Google Analytics · Sky</span>
-            <span>UX Lead · Design Systems · Product Strategy</span>
+                <a
+                  href="/Valerio_Italiano_resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-8 text-[17px] text-near-black hover:text-accent transition-colors"
+                >
+                  Download resume →
+                </a>
+              </div>
+
+              {/* Photo */}
+              <div className="order-first lg:order-last">
+                <div className="relative w-full aspect-[3/4] lg:aspect-auto lg:h-[340px] rounded-xl overflow-hidden">
+                  <Image
+                    src="/valerio-photo.jpg"
+                    alt="Valerio Italiano"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 280px"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
