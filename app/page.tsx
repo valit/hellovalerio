@@ -32,8 +32,8 @@ export default function Home() {
         />
         <div className="hero-inner">
           <h1>
-            Hi, my name is Valerio and I design product experiences and systems
-            that help complex products grow and scale
+            Hello, I&apos;m Valerio and I design product experiences that make
+            complex systems feel natural and intuitive
           </h1>
         </div>
       </section>
