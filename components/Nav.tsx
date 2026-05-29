@@ -1,79 +1,49 @@
 "use client";
-
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const links = [
-  { href: "#work", label: "case studies", id: "work" },
-  { href: "#about", label: "about", id: "about" },
-  { href: "#contact", label: "contact", id: "contact" },
+  { href: "#case-studies", label: "case studies" },
+  { href: "#about", label: "about me" },
+  { href: "#contact", label: "contact" },
 ];
 
+function scrollTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sectionIds = ["hero", "work", "about", "contact"];
-    const observers: IntersectionObserver[] = [];
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) setActiveSection(id);
-          });
-        },
-        { threshold: 0.4 }
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
-
-    return () => observers.forEach((obs) => obs.disconnect());
-  }, []);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-sm border-b border-card-border"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+    <header className="site-header">
+      <div className="container inner">
         <a
-          href="/"
-          className="font-serif text-[17px] tracking-tight text-near-black select-none"
+          href="#top"
+          onClick={(e) => scrollTo(e, "#top")}
+          className="wordmark"
         >
-          <span className="font-normal">hello</span>
-          <span className="font-bold">valerio</span>
+          <Image
+            src="/hellovalerio.png"
+            alt="hellovalerio"
+            width={125}
+            height={20}
+            priority
+          />
         </a>
-
-        <ul className="flex items-center gap-8">
-          {links.map(({ href, label, id }) => (
-            <li key={id}>
-              <a
-                href={href}
-                className={`text-sm font-sans transition-colors duration-200 ${
-                  activeSection === id
-                    ? "text-accent"
-                    : "text-muted hover:text-near-black"
-                }`}
-              >
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <nav aria-label="primary">
+          <ul className="site-nav">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} onClick={(e) => scrollTo(e, href)}>
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }

@@ -12,6 +12,7 @@ export interface CaseStudy {
   company: string;
   role: string;
   year: string;
+  tags: string[];
   content: ContentBlock[];
 }
 
@@ -21,17 +22,20 @@ export interface CardData {
   company: string;
   tags?: string[];
   slug?: string;
+  image?: string;
+  logo?: string;
 }
 
 const measurementEcosystem: CaseStudy = {
   slug: "measurement-ecosystem",
-  title: "Designing a more coherent measurement ecosystem",
+  title: "Creating a more coherent measurement ecosystem",
   subtitle:
     "Redesigning how advertisers understand and configure conversion tracking across Google's advertising ecosystem",
   hook: "Redesigning how advertisers understand and configure conversion tracking",
-  company: "Google Ads",
+  company: "Google",
   role: "UX Lead",
   year: "2022–2024",
+  tags: ["Measurement", "Complex systems", "Frameworks"],
   content: [
     { type: "heading", text: "Overview" },
     {
@@ -72,10 +76,6 @@ const measurementEcosystem: CaseStudy = {
       text: "I began exploring a more contextual approach centered around the advertiser's own website. Instead of leading with conversion types and implementation details, the system used the advertiser's site to better understand their business, any existing measurement setup, and the kinds of outcomes they were likely trying to track.",
     },
     {
-      type: "paragraph",
-      text: "This made the setup experience far more contextual. Instead of presenting advertisers with generic implementation flows, the system could adapt guidance and recommendations based on the realities of each business and its existing measurement setup.",
-    },
-    {
       type: "image",
       fullBleed: true,
       aspectRatio: "16/9",
@@ -87,60 +87,12 @@ const measurementEcosystem: CaseStudy = {
       text: "The experience was refined through multiple rounds of usability studies, and the response to the redesign helped establish a broader realization across the organization: the problem wasn't simply that conversion setup was technically complex. The deeper issue was that the entire experience had been designed around measurement infrastructure rather than around advertisers' business goals.",
     },
     {
-      type: "paragraph",
-      text: "As the work expanded beyond web conversions, I began redesigning the setup experience around a different starting idea.",
-    },
-    {
-      type: "paragraph",
-      text: 'Instead of asking advertisers, "What conversion actions do you want to create?", the system began by asking: "What outcomes are important for your business to measure?"',
-    },
-    {
       type: "pullquote",
       text: "This shifted measurement setup from an implementation task to a business decision.",
     },
     {
       type: "paragraph",
       text: "Advertisers could express goals such as purchases, leads, or sign-ups, while the system translated those goals into relevant measurement approaches.",
-    },
-    { type: "heading", text: "A platform-centred model" },
-    {
-      type: "paragraph",
-      text: "To support this model, I expanded the setup flow beyond individual measurement technologies and reframed it around the platforms advertisers used to engage with their customers: websites, apps, physical stores, and other business surfaces. This created the context needed for the system to provide more relevant guidance across any applicable platform.",
-    },
-    {
-      type: "paragraph",
-      text: "An advertiser without an app, for example, would never be asked to configure app measurement or navigate workflows unrelated to their business. Setup became contextual, adaptive, and more closely aligned with the way advertisers already understood their own operations.",
-    },
-    {
-      type: "image",
-      fullBleed: true,
-      aspectRatio: "4/3",
-      caption:
-        "The platform-centred model: setup organised around business surfaces rather than measurement technologies",
-    },
-    {
-      type: "paragraph",
-      text: "Importantly, I did not redesign the underlying infrastructure that powered conversion measurement. I redesigned the organizing model that guided advertisers through the decisions required to build the right measurement setup.",
-    },
-    { type: "heading", text: "Scaling across the ecosystem" },
-    {
-      type: "paragraph",
-      text: "This shift in mental model became the foundation for a broader effort to bring greater consistency to how Google's advertising products approached measurement setup.",
-    },
-    {
-      type: "paragraph",
-      text: "Google Analytics was one of the first and most significant areas of focus. Because advertisers regularly moved between Analytics and Google Ads, inconsistencies between the two products had become a major source of confusion. Despite their close relationship, each product had evolved its own terminology, setup patterns, and mental models over many years under separate teams.",
-    },
-    {
-      type: "paragraph",
-      text: "I led a unification effort focused on creating a more coherent experience across the ecosystem, aligning the way measurement concepts were structured, communicated, and introduced across both products.",
-    },
-    {
-      type: "image",
-      fullBleed: true,
-      aspectRatio: "16/9",
-      caption:
-        "Aligning measurement concepts across Google Ads and Google Analytics",
     },
     { type: "heading", text: "Outcome" },
     {
@@ -150,29 +102,180 @@ const measurementEcosystem: CaseStudy = {
   ],
 };
 
-export const caseStudies: CaseStudy[] = [measurementEcosystem];
+const googleAdsCampaign: CaseStudy = {
+  slug: "google-ads-campaign-creation",
+  title: "Built to bend: untangling campaign creation in Google Ads",
+  subtitle: "Redesigning campaign creation to support the full range of advertiser needs — from simple to sophisticated",
+  hook: "Redesigning campaign creation to support the full range of advertiser needs",
+  company: "Google",
+  role: "UX Lead",
+  year: "2020–2022",
+  tags: ["Frameworks", "Monetization", "Configuration"],
+  content: [
+    { type: "heading", text: "Overview" },
+    {
+      type: "paragraph",
+      text: "Campaign creation in Google Ads serves an extraordinarily wide range of advertisers — from small businesses running their first ad to sophisticated marketing teams managing thousands of campaigns. The challenge was designing a flow that could flex to meet all of them.",
+    },
+    {
+      type: "paragraph",
+      text: "Over years of incremental feature additions, the campaign creation flow had accumulated layers of complexity that made it difficult for new advertisers to succeed while also frustrating experienced ones who needed more control.",
+    },
+    { type: "heading", text: "The challenge" },
+    {
+      type: "paragraph",
+      text: "The core tension was between simplicity and power. Guided flows helped beginners but frustrated experts. Advanced controls helped power users but overwhelmed beginners. Previous attempts at solving this had resulted in parallel flows that were expensive to maintain and created their own consistency problems.",
+    },
+    {
+      type: "image",
+      fullBleed: true,
+      aspectRatio: "16/9",
+      caption: "The existing campaign creation flow, showing accumulated complexity over time",
+    },
+    { type: "heading", text: "The approach" },
+    {
+      type: "paragraph",
+      text: "Rather than designing separate beginner and expert flows, I explored a single adaptive framework that could expand and contract based on the advertiser's context and declared goals.",
+    },
+    {
+      type: "pullquote",
+      text: "The best interface for a beginner and the best interface for an expert are not as different as they seem — both want clarity about what matters most right now.",
+    },
+    {
+      type: "paragraph",
+      text: "The redesign introduced a goal-first entry point that shaped the entire flow, progressive disclosure that revealed advanced options when they became relevant, and inline guidance that explained concepts at the moment of decision rather than in separate help content.",
+    },
+    { type: "heading", text: "Outcome" },
+    {
+      type: "paragraph",
+      text: "The new framework reduced the number of steps required for common campaign types while giving power users clearer access to advanced configuration. It also created a more maintainable structure that the team could extend as new campaign types and features were added.",
+    },
+  ],
+};
+
+const skyServiceRecovery: CaseStudy = {
+  slug: "sky-service-recovery",
+  title: "The good after the bad: designing service recovery",
+  subtitle: "Helping Sky customers resolve problems quickly and leave with a better impression of the brand",
+  hook: "Turning service failures into moments of loyalty",
+  company: "Sky",
+  role: "Senior UX Designer",
+  year: "2016–2018",
+  tags: ["Customer support", "Self-service", "Mobile"],
+  content: [
+    { type: "heading", text: "Overview" },
+    {
+      type: "paragraph",
+      text: "When a customer's TV service goes down or their bill is wrong, the experience of getting that fixed matters enormously — sometimes more than the original problem. Sky had strong brand equity but service recovery experiences that often left customers more frustrated than before they called.",
+    },
+    {
+      type: "paragraph",
+      text: "I led the redesign of Sky's mobile service recovery experience, with the goal of helping customers resolve common issues without calling, while feeling genuinely cared for when they did.",
+    },
+    { type: "heading", text: "The insight" },
+    {
+      type: "paragraph",
+      text: "Research revealed that customers' frustration wasn't primarily with the service failure itself — it was with the feeling of being passed around, asked to repeat themselves, and not trusted. The emotional journey of recovery mattered as much as the practical outcome.",
+    },
+    {
+      type: "image",
+      fullBleed: true,
+      aspectRatio: "4/3",
+      caption: "Service recovery journey mapping, showing emotional peaks and valleys across channels",
+    },
+    {
+      type: "pullquote",
+      text: "A service failure handled well can create stronger loyalty than a service that never failed at all.",
+    },
+    { type: "heading", text: "Outcome" },
+    {
+      type: "paragraph",
+      text: "The redesigned mobile experience significantly increased the proportion of customers who resolved issues without calling, while customer satisfaction scores for self-service recovery improved markedly across all tracked metrics.",
+    },
+  ],
+};
+
+const skyContentDiscovery: CaseStudy = {
+  slug: "sky-content-discovery",
+  title: "What's on tonight: the invisible architecture of content discovery",
+  subtitle: "Redesigning how Sky customers find and watch content across all their devices",
+  hook: "Making it easier to find something worth watching",
+  company: "Sky",
+  role: "Senior UX Designer",
+  year: "2018–2020",
+  tags: ["Discovery", "Content systems"],
+  content: [
+    { type: "heading", text: "Overview" },
+    {
+      type: "paragraph",
+      text: "Content discovery is one of the most consequential — and most invisible — design challenges in broadcast media. When it works, people find great things to watch and never think about how. When it fails, they spend twenty minutes scrolling and give up.",
+    },
+    {
+      type: "paragraph",
+      text: "I led a cross-platform redesign of Sky's content discovery experience, spanning the TV remote, mobile app, and web, with the goal of making the right content feel easier to find across all contexts.",
+    },
+    { type: "heading", text: "The problem with the obvious approach" },
+    {
+      type: "paragraph",
+      text: "The instinct in content discovery design is to show more — more tiles, more categories, more personalisation. But research consistently showed that more options led to more paralysis. The problem wasn't a shortage of good content; it was a shortage of confident decisions.",
+    },
+    {
+      type: "image",
+      fullBleed: true,
+      aspectRatio: "16/9",
+      caption: "Cross-device content discovery flow, showing how discovery intent varies by context",
+    },
+    {
+      type: "pullquote",
+      text: "The best discovery experience feels less like browsing a catalogue and more like a recommendation from someone who knows you.",
+    },
+    { type: "heading", text: "Outcome" },
+    {
+      type: "paragraph",
+      text: "The redesigned experience increased content starts from the discovery surface and reduced the average time-to-play across all devices, while customer satisfaction with the 'finding content' experience improved significantly.",
+    },
+  ],
+};
+
+export const caseStudies: CaseStudy[] = [
+  measurementEcosystem,
+  googleAdsCampaign,
+  skyServiceRecovery,
+  skyContentDiscovery,
+];
 
 export const cardData: CardData[] = [
   {
     title: "Built to bend: untangling campaign creation in Google Ads",
     company: "Google",
     tags: ["Frameworks", "Monetization", "Configuration"],
+    slug: "google-ads-campaign-creation",
+    image: "/case-01-google-ads-campaign.jpg",
+    logo: "/logo-google.png",
   },
   {
     title: "Creating a more coherent measurement ecosystem",
     company: "Google",
     tags: ["Measurement", "Complex systems", "Frameworks"],
     slug: "measurement-ecosystem",
+    image: "/case-02-google-ads-measurement.jpg",
+    logo: "/logo-google.png",
   },
   {
     title: "The good after the bad: designing service recovery",
     company: "Sky",
     tags: ["Customer support", "Self-service", "Mobile"],
+    slug: "sky-service-recovery",
+    image: "/case-03-sky-service-recovery.jpeg",
+    logo: "/logo-sky.png",
   },
   {
     title: "What's on tonight: The invisible architecture of content discovery",
     company: "Sky",
     tags: ["Discovery", "Content systems"],
+    slug: "sky-content-discovery",
+    image: "/case-04-sky-content-discovery.jpg",
+    logo: "/logo-sky.png",
   },
 ];
 

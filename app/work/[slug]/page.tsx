@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getCaseStudy } from "@/data/caseStudies";
-import CaseStudyContent from "@/components/CaseStudyContent";
+import Nav from "@/components/Nav";
 
 export default async function CaseStudyPage({
   params,
@@ -13,50 +13,109 @@ export default async function CaseStudyPage({
   if (!cs) notFound();
 
   return (
-    <main className="min-h-screen bg-page-bg">
-      {/* Back link */}
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 pt-10">
-        <a
-          href="/#work"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-near-black transition-colors"
-        >
-          <span aria-hidden>←</span>
-          <span>All work</span>
-        </a>
-      </div>
+    <>
+      <Nav />
+      <main>
+        <div className="container">
+          <a href="/#case-studies" className="cs-back">
+            <span aria-hidden>←</span>
+            <span>All work</span>
+          </a>
+        </div>
 
-      {/* Cover */}
-      <div className="max-w-[680px] mx-auto px-6 lg:px-0 pt-16 pb-20">
-        <h1 className="font-serif text-[2.5rem] lg:text-[3rem] font-normal leading-[1.2] text-near-black">
-          {cs.title}
-        </h1>
-        <p className="mt-6 text-lg text-muted leading-relaxed">{cs.subtitle}</p>
-
-        {/* Metadata row */}
-        <div className="mt-10 pt-8 border-t border-card-border flex flex-wrap gap-8 text-sm">
-          <div>
-            <p className="text-[11px] font-medium tracking-widest uppercase text-muted mb-1">
-              Company
-            </p>
-            <p className="text-near-black">{cs.company}</p>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium tracking-widest uppercase text-muted mb-1">
-              Role
-            </p>
-            <p className="text-near-black">{cs.role}</p>
-          </div>
-          <div>
-            <p className="text-[11px] font-medium tracking-widest uppercase text-muted mb-1">
-              Year
-            </p>
-            <p className="text-near-black">{cs.year}</p>
+        <div className="container">
+          <div className="cs-hero">
+            <h1>{cs.title}</h1>
+            {cs.tags && cs.tags.length > 0 && (
+              <div className="cs-tags">
+                {cs.tags.map((tag) => (
+                  <span key={tag} className="cs-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "32px",
+                paddingTop: "32px",
+                borderTop: "1px solid #d4d8de",
+                fontFamily: "var(--font-sans)",
+                fontSize: "13px",
+              }}
+            >
+              {[
+                { label: "Company", value: cs.company },
+                { label: "Role", value: cs.role },
+                { label: "Year", value: cs.year },
+              ].map(({ label, value }) => (
+                <div key={label}>
+                  <p
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: 600,
+                      letterSpacing: "0.14em",
+                      textTransform: "uppercase",
+                      color: "#8a97a0",
+                      margin: "0 0 4px",
+                    }}
+                  >
+                    {label}
+                  </p>
+                  <p style={{ color: "#2f3a44", margin: 0 }}>{value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Editorial content */}
-      <CaseStudyContent content={cs.content} />
-    </main>
+        <div className="container">
+          <div className="cs-body">
+            {cs.content.map((block, i) => {
+              switch (block.type) {
+                case "heading":
+                  return <h2 key={i}>{block.text}</h2>;
+                case "paragraph":
+                  return <p key={i}>{block.text}</p>;
+                case "pullquote":
+                  return <blockquote key={i}>{block.text}</blockquote>;
+                case "image":
+                  return (
+                    <div key={i} style={{ margin: "40px 0" }}>
+                      <div
+                        style={{
+                          width: "100%",
+                          aspectRatio: block.aspectRatio === "16/9" ? "16 / 9" : "4 / 3",
+                          background: "#d8dde2",
+                          borderRadius: "14px",
+                        }}
+                      />
+                      <p
+                        style={{
+                          marginTop: "12px",
+                          fontSize: "13px",
+                          color: "#8a97a0",
+                          fontFamily: "var(--font-sans)",
+                          textAlign: "center",
+                        }}
+                      >
+                        {block.caption}
+                      </p>
+                    </div>
+                  );
+                default:
+                  return null;
+              }
+            })}
+          </div>
+        </div>
+      </main>
+
+      <footer className="site-footer">
+        <div className="container">© 2026 Valerio Italiano</div>
+      </footer>
+    </>
   );
 }
