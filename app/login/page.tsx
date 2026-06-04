@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { login } from "./actions";
 
 export default async function LoginPage({
@@ -12,12 +13,8 @@ export default async function LoginPage({
     <main className="min-h-screen bg-white flex items-center justify-center px-6">
       <div className="w-full max-w-sm text-center">
         {/* Wordmark */}
-        <a
-          href="/"
-          className="inline-block font-serif text-[17px] tracking-tight text-near-black mb-10"
-        >
-          <span className="font-normal">hello</span>
-          <span className="font-bold">valerio</span>
+        <a href="/" className="inline-block mb-10">
+          <Image src="/hellovalerio.png" alt="hellovalerio" width={125} height={20} priority />
         </a>
 
         <p className="text-sm text-muted leading-relaxed mb-8">

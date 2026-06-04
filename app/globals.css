@@ -103,7 +103,7 @@ img {
 .site-nav a {
   font-family: var(--font-sans);
   font-size: 16px;
-  color: #a5a5a5 !important;
+  color: #565656 !important;
   padding: 6px 0;
   display: block;
   transition: color 0.2s;
