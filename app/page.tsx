@@ -57,8 +57,8 @@ export default function Home() {
           <div className="about-card">
             <div className="about-copy">
               <p>
-                Born in Rome, grown up in London, and now my family and I call
-                the Bay Area home.
+                Born in Rome, I lived in London for over two decades and now
+                call the Bay Area home with my family.
               </p>
               <p>
                 I spent over 20 years designing digital products — across online
@@ -67,9 +67,13 @@ export default function Home() {
                 advertising tools used by millions of businesses worldwide.
               </p>
               <p>
-                What drives me is finding the beauty of the simple idea hiding
-                inside a complicated system — and building the frameworks that
-                help products scale without losing their clarity.
+                What drives me is finding the simple ideas that help people make
+                sense of complex systems. As products grow, they often become
+                reflections of the technologies and processes behind them, asking
+                users to adapt to the way the system works. I enjoy reversing
+                that relationship — creating experiences organized around human
+                goals and decisions while preserving the power and flexibility of
+                the systems behind them.
               </p>
               <a href="/resume.pdf" download className="resume-link">
                 <svg

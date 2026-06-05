@@ -1,0 +1,64 @@
+---
+title: "Built to bend: Untangling campaign creation in Google Ads"
+company: Google
+role: UX Lead
+year: "2022–2024"
+tags:
+  - Measurement
+  - Complex systems
+  - Frameworks
+cardImage: /case-01-google-ads-measurement.jpg
+cardImageAlt: Google Ads measurement setup interface showing business outcome categories on an iPad
+---
+
+<Intro>
+Creating a campaign is perhaps _the_ central workflow in Google Ads and sits at the heart of Google's multi-billion-dollar advertising business. Over time, however, new campaign types, features, and options had accumulated on top of an increasingly rigid framework, making it harder for advertisers to understand how to configure campaigns effectively and for teams to evolve the system consistently.
+
+The consequences of this fragmentation were increasingly visible. Nearly 40% of campaigns failed to serve correctly immediately after setup, often because advertisers struggled to identify conflicts, missing configuration, or relationships between different parts of a campaign.
+
+I led the redesign of Google Ads' campaign construction framework, introducing a more modular and flexible setup model that reorganized the experience around advertiser workflows, campaign readiness, and decision making while creating a more consistent foundation for both advertisers and the design teams building campaign experiences across Google Ads.
+</Intro>
+
+---
+
+Campaign setup is one of the foundational workflows in Google Ads. It takes an advertiser from zero to a fully formed campaign that generates traffic for the advertiser and revenue for Google. As one of the first experiences many advertisers have with the product, it can shape both their initial success and their perception of Google Ads as a whole. 
+
+Different campaign types had evolved independently over time, introducing their own setup flows, forecasting models, navigation patterns, and interaction logic.
+
+What initially appeared to be a collection of unrelated usability issues turned out to have a common root cause. The experience closely mirrored Google's internal campaign structure: campaigns contained ad groups, ad groups contained ads, and advertisers were expected to configure them in exactly that sequence.
+
+<Media src="/case-01-campaigns-1.mp4" caption="Enter caption here." />
+
+But advertisers don't think in terms of entities and save hierarchies. They think about audiences, messaging, budgets, goals, and performance. 
+
+The experience had been organized around how Google stored campaign data rather than around the decisions advertisers needed to make. The consequences of this model could be seen throughout the setup flow.
+
+<PullQuote>
+Advertisers don't think in terms of entities and save hierarchies. They think about audiences, messaging, budgets, goals, and performance.
+</PullQuote>
+
+Related decisions were often separated because they lived in different parts of the underlying schema. Ad extensions, for example, were technically campaign-level settings even though advertisers naturally understood them as part of the creative itself. Similar disconnects appeared across setup, making campaigns harder to build, harder to understand, and increasingly difficult for teams to evolve consistently.
+
+Campaign setup needed a different organizing model: one that separated the setup experience from the hierarchy beneath it.
+
+Rather than forcing the experience to mirror the underlying save structure, I separated campaign setup from the hierarchy that powered it. Campaigns, ad groups, and ads still existed, but they no longer dictated how advertisers moved through the process or how decisions were organized.
+
+This created a far more modular framework. Related decisions could now appear together regardless of where they lived internally, and campaign teams gained the flexibility to adapt setup flows to the needs of different campaign types without reinventing the experience from scratch.
+
+This shift also created opportunities to address one of the project's most important business problems: campaign readiness.
+
+Because setup was no longer tied to a rigid hierarchy, the system could evaluate campaigns more holistically as they were being assembled. Forecasts, validation, and health checks became integrated parts of the setup experience rather than isolated features implemented differently across campaign types.
+
+Advertisers could identify conflicts, missing configuration, and performance risks before launching a campaign rather than discovering them after the fact.
+
+This was particularly important because a significant percentage of campaigns failed to serve correctly after setup. By surfacing issues earlier and integrating readiness checks directly into campaign creation, the new framework improved campaign completion and serving rates by 6%.
+
+<Media src="/case-01-campaigns-2.mp4" caption="Enter caption here." />
+
+The benefits extended beyond campaign readiness, too. Because the framework separated the setup experience from the underlying engineering hierarchy, it also created a shared foundation that could be adopted across campaign types, reducing fragmentation while giving teams greater flexibility to evolve their experiences over time.
+
+It provided a common language for designers, product managers, and engineers across Google Ads, making it easier to create consistent experiences while supporting the needs of an increasingly diverse advertising ecosystem.
+
+The framework was first adopted by Search and the newly launched Performance Max campaigns before expanding to Display, Video, and ultimately all Google Ads campaign types.
+
+By separating the experience from the engineering hierarchy beneath it, we transformed campaign setup from a rigid implementation process into a flexible framework that could adapt to both advertiser needs and the evolving structure of Google Ads without sacrificing consistency along the way.

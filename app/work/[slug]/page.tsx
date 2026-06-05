@@ -1,7 +1,34 @@
+import fs from "fs";
+import path from "path";
 import { notFound } from "next/navigation";
-import { getCaseStudy } from "@/data/caseStudies";
+import matter from "gray-matter";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Nav from "@/components/Nav";
 import CaseStudyContent from "@/components/CaseStudyContent";
+import { mdxComponents } from "@/components/mdx/mdxComponents";
+import type { MediaItem } from "@/components/mdx/MediaRegistry";
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function getMdxFilePath(slug: string) {
+  return path.join(process.cwd(), "content", "case-studies", `${slug}.mdx`);
+}
+
+/**
+ * Extract ordered media items from raw MDX source so the lightbox can
+ * navigate through them in document order without client-side registration.
+ */
+function extractMediaItems(content: string): MediaItem[] {
+  const regex = /<Media\b[^>]*\bsrc="([^"]+)"(?:[^>]*\bcaption="([^"]*)")?[^>]*\/?>/g;
+  const items: MediaItem[] = [];
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    items.push({ src: match[1], caption: match[2] || undefined });
+  }
+  return items;
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function CaseStudyPage({
   params,
@@ -9,14 +36,27 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const cs = getCaseStudy(slug);
+  const filePath = getMdxFilePath(slug);
 
-  if (!cs) notFound();
+  if (!fs.existsSync(filePath)) notFound();
+
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data: fm, content } = matter(raw);
+  const mediaItems = extractMediaItems(content);
 
   return (
     <>
       <Nav />
-      <CaseStudyContent cs={cs} />
+      <CaseStudyContent
+        title={fm.title}
+        company={fm.company}
+        role={fm.role}
+        year={fm.year}
+        tags={fm.tags ?? []}
+        mediaItems={mediaItems}
+      >
+        <MDXRemote source={content} components={mdxComponents} />
+      </CaseStudyContent>
       <footer className="site-footer" style={{ padding: "0 0 28px" }}>
         <div className="container">
           <hr style={{ border: "none", borderTop: "1px solid #8a97a0", margin: "48px 0" }} />
