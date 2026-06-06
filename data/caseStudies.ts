@@ -14,7 +14,7 @@ export const cardData: CardData[] = [
     company: "Google",
     tags: ["Frameworks", "Monetization", "Configuration"],
     slug: "campaigns",
-    image: "/case-01-google-ads-campaign.jpg",
+    image: "/case-01-campaigns-card.jpg",
     logo: "/logo-google.png",
   },
   {

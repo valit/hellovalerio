@@ -2,12 +2,14 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import ContactForm from "@/components/ContactForm";
+import HashScroller from "@/components/HashScroller";
 import { cardData } from "@/data/caseStudies";
 
 export default function Home() {
   return (
     <>
       <Nav />
+      <HashScroller />
 
       {/* ── HERO ── */}
       <section id="top" className="hero">
@@ -116,13 +118,12 @@ export default function Home() {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div>
                 <h2 className="contact-heading">Open to the right conversation</h2>
-                <span className="contact-email">hello@hellovaler.io</span>
               </div>
               <div className="socials" style={{ marginTop: "auto" }}>
-                <a href="#" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/valerioitaliano/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <Image src="/social-LinkedIn.png" alt="LinkedIn" width={36} height={36} />
                 </a>
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/valit/?hl=en" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <Image src="/social-Instagram.png" alt="Instagram" width={36} height={36} />
                 </a>
               </div>

@@ -166,7 +166,7 @@ export default function CaseStudyContent({
             {/* ── MDX body — block container at cols 3–8; float-based layout inside ── */}
             <div style={{ gridColumn: "3 / 9" }}>
               {children}
-              {/* clearfix: ensures this container's height encompasses any floated pull quotes */}
+              {/* clearfix: ensures container height encompasses any floated pull quotes */}
               <div style={{ clear: "both" }} />
             </div>
 

@@ -153,6 +153,7 @@ img {
 
 /* ---------- Case studies ---------- */
 .case-studies {
+  scroll-margin-top: 52px;
   padding-bottom: 96px;
   position: relative;
   z-index: 1;
@@ -177,6 +178,7 @@ img {
 
 /* ---------- About ---------- */
 .about {
+  scroll-margin-top: 52px;
   padding-bottom: 96px;
 }
 .about-card {
@@ -241,6 +243,7 @@ img {
 
 /* ---------- Contact ---------- */
 .contact {
+  scroll-margin-top: 52px;
   padding-bottom: 80px;
 }
 .contact-card {
