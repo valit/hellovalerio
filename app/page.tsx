@@ -77,29 +77,24 @@ export default function Home() {
                 goals and decisions while preserving the power and flexibility of
                 the systems behind them.
               </p>
-              <a href="/resume.pdf" download className="resume-link">
-                <svg
-                  width="22"
-                  height="26"
-                  viewBox="0 0 22 26"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M3 1h11l5 5v18a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                  />
-                  <path d="M14 1v5h5" stroke="currentColor" strokeWidth="1.4" />
-                  <path
-                    d="M6 11h10M6 15h10M6 19h7"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <span>Download resume</span>
-              </a>
+              <div className="about-actions">
+                <a href="/resume.pdf" download className="resume-link">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/file-download.png" alt="" aria-hidden="true" width={36} height={36} />
+                  <span>Download resume</span>
+                </a>
+                <div className="about-actions-divider" />
+                <div className="socials">
+                  <a href="https://www.linkedin.com/in/valerioitaliano/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/social-LinkedIn.png" alt="LinkedIn" width={36} height={36} />
+                  </a>
+                  <a href="https://www.instagram.com/valit/?hl=en" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/social-Instagram.png" alt="Instagram" width={36} height={36} />
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="polaroid">
@@ -117,15 +112,7 @@ export default function Home() {
           <div className="contact-card">
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div>
-                <h2 className="contact-heading">Open to the right conversation</h2>
-              </div>
-              <div className="socials" style={{ marginTop: "auto" }}>
-                <a href="https://www.linkedin.com/in/valerioitaliano/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <Image src="/social-LinkedIn.png" alt="LinkedIn" width={36} height={36} />
-                </a>
-                <a href="https://www.instagram.com/valit/?hl=en" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                  <Image src="/social-Instagram.png" alt="Instagram" width={36} height={36} />
-                </a>
+                <h2 className="contact-heading">Open to the right<br />conversation</h2>
               </div>
             </div>
 

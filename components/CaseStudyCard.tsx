@@ -64,14 +64,14 @@ export default function CaseStudyCard({ card }: { card: CardData }) {
       </div>
 
       {/* Content — title + tags */}
-      <div style={{ padding: "20px 24px 28px" }}>
+      <div style={{ padding: "20px 40px 32px 24px" }}>
         <h3
           style={{
-            fontFamily: "var(--font-serif)",
+            fontFamily: "var(--font-sans)",
             fontWeight: 700,
-            fontSize: "20px",
+            fontSize: "18px",
             lineHeight: 1.35,
-            color: "#2f3a44",
+            color: "#5D6E77",
             margin: "0 0 16px",
             textWrap: "pretty",
           } as React.CSSProperties}

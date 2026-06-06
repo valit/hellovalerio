@@ -35,9 +35,9 @@ export const cardData: CardData[] = [
     logo: "/logo-sky.png",
   },
   {
-    title: "What's on tonight: The invisible architecture of content discovery",
+    title: "What's on tonight: the invisible architecture of content discovery",
     company: "Sky",
-    tags: ["Discovery", "Content systems"],
+    tags: ["Content systems", "Audience engagement", "Discovery"],
     slug: "content-discovery",
     image: "/case-04-sky-content-discovery.jpg",
     logo: "/logo-sky.png",
