@@ -68,7 +68,7 @@ export default function CaseStudyCard({ card }: { card: CardData }) {
         <h3
           style={{
             fontFamily: "var(--font-sans)",
-            fontWeight: 700,
+            fontWeight: 500,
             fontSize: "18px",
             lineHeight: 1.35,
             color: "#5D6E77",

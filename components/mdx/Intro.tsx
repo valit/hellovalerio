@@ -11,6 +11,7 @@ export default function Intro({ children }: { children: React.ReactNode }) {
   return (
     <InIntroContext.Provider value={true}>
       <div
+        className="cs-intro"
         style={{
           marginTop: "48px",
           display: "flex",

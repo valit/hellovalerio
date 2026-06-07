@@ -80,6 +80,7 @@ export default function Media({
       {/* Caption */}
       {caption && (
         <p
+          className="cs-media-caption"
           style={{
             ...sans,
             marginTop: "12px",

@@ -80,6 +80,9 @@ export default function CaseStudyContent({
               ))}
             </div>
 
+            {/* Rule between metadata and body — mobile only */}
+            <hr className="cs-body-rule" />
+
             {/* MDX body */}
             <div className="cs-body-col">
               {children}
