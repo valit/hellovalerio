@@ -25,7 +25,7 @@ export default function P({ children }: { children: React.ReactNode }) {
         style={{
           ...sans,
           fontWeight: 500,
-          fontSize: "20px",
+          fontSize: "21px",
           lineHeight: 1.5,
           color: "#5D6E77",
           margin: 0,
@@ -44,7 +44,7 @@ export default function P({ children }: { children: React.ReactNode }) {
       style={{
         ...sans,
         marginTop: "24px",
-        fontSize: "16px",
+        fontSize: "18px",
         lineHeight: 1.75,
         color: "#5D6E77",
       } as React.CSSProperties}
