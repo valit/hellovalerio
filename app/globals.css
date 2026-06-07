@@ -75,7 +75,10 @@ img {
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
 }
-@media (min-width: 821px) {
+@media (min-width: 820px) {
+  body {
+    overflow-x: clip;
+  }
   .site-header {
     position: sticky;
     z-index: 50;
@@ -124,9 +127,23 @@ img {
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
   padding: 96px 0 136px;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+.hero-bg {
+  position: absolute !important;
+  top: 0 !important;
+  /* Centre the 1440px image within the viewport so the portrait stays
+     visually stable as the viewport narrows — equal amounts clip from
+     each side rather than the portrait drifting toward the right edge. */
+  left: calc(50% - 720px) !important;
+  width: 1440px !important;
+  max-width: none !important;
+  height: auto !important;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
 }
 .hero-inner {
   position: relative;
@@ -572,7 +589,7 @@ input:autofill {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 820px) {
+@media (max-width: 819px) {
   /* — Nav — */
   :root {
     --gutter: 16px;
@@ -636,9 +653,7 @@ input:autofill {
     padding: 48px 0 90px;
     min-height: 360px;
     overflow-x: clip;
-  }
-  .mobile-break {
-    display: inline;
+    overflow-y: visible;
   }
   .hero img {
     position: absolute !important;
@@ -649,6 +664,9 @@ input:autofill {
     height: auto !important;
     transform: scale(2.53) !important;
     transform-origin: top right !important;
+  }
+  .mobile-break {
+    display: inline;
   }
 
   .hero-inner h1 {
@@ -824,5 +842,20 @@ input:autofill {
     padding: 16px;
     margin-left: -16px;
     margin-right: -16px;
+  }
+}
+
+/* ---------- Wide single column (576px–819px): larger margins ---------- */
+@media (min-width: 576px) and (max-width: 819px) {
+  :root {
+    --gutter: 24px;
+  }
+  .cs-wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .cs-media-outer {
+    margin-left: -24px;
+    margin-right: -24px;
   }
 }

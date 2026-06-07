@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Nav from "@/components/Nav";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import ContactForm from "@/components/ContactForm";
@@ -13,25 +12,8 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section id="top" className="hero">
-        <Image
-          src="/hero-desktop.png"
-          alt=""
-          aria-hidden={true}
-          width={1440}
-          height={677}
-          priority
-          sizes="100vw"
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "auto",
-            zIndex: -1,
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/hero-desktop.png" alt="" aria-hidden={true} className="hero-bg" />
         <div className="hero-inner">
           <h1>
             Hello, I&apos;m Valerio<br className="mobile-break" /> and I design product experiences that make
