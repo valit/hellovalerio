@@ -34,7 +34,7 @@ export default function Home() {
         />
         <div className="hero-inner">
           <h1>
-            Hello, I&apos;m Valerio and I design product experiences that make
+            Hello, I&apos;m Valerio<br className="mobile-break" /> and I design product experiences that make
             complex systems feel natural and intuitive
           </h1>
         </div>
@@ -58,6 +58,11 @@ export default function Home() {
           <p className="section-label">About me</p>
           <div className="about-card">
             <div className="about-copy">
+              {/* Mobile-only: photo floats right beside first paragraph */}
+              <div className="polaroid-mobile-float">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/portrait.jpg" alt="Portrait of Valerio Italiano" />
+              </div>
               <p>
                 Born in Rome, I lived in London for over two decades and now
                 call the Bay Area home with my family.

@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inriaSerif.variable} ${hindVadodara.variable}`}>
-      <body>{children}</body>
+      <body><div style={{ overflowX: "hidden" }}>{children}</div></body>
     </html>
   );
 }
