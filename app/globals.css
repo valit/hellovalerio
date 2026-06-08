@@ -283,7 +283,7 @@ img {
 /* ---------- Contact ---------- */
 .contact {
   scroll-margin-top: 52px;
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 .contact-card {
   background: #eef0f4;
@@ -442,7 +442,7 @@ input:autofill {
 
 /* ---------- Footer ---------- */
 .site-footer {
-  padding: 24px 0 36px;
+  padding: 32px 0 36px;
   font-size: 13px;
   color: #8a97a0;
 }
@@ -742,7 +742,7 @@ input:autofill {
 
   /* — Contact — */
   .contact {
-    padding-bottom: 56px;
+    padding-bottom: 0;
   }
   .contact-card {
     grid-template-columns: 1fr;
