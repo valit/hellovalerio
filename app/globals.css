@@ -378,12 +378,12 @@ input:autofill {
 }
 .float-field.error input,
 .float-field.error textarea {
-  border-bottom-color: #e07856;
+  border-bottom-color: #D95C5B;
 }
 .float-field label {
   position: absolute;
   left: 0;
-  bottom: 7px;
+  top: 22px;
   font-family: var(--font-sans);
   font-size: 16px;
   color: #5d6e77;
