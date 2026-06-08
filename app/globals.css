@@ -847,16 +847,20 @@ input:autofill {
 
 /* ---------- Large tablet (820px–959px) ---------- */
 @media (min-width: 820px) and (max-width: 959px) {
-  /* Tighten page margins and card gap */
-  :root {
-    --gutter: 24px;
+  /* 24px side margins — set directly rather than via --gutter
+     to guarantee the value regardless of variable cascade order */
+  .container,
+  .hero-inner {
+    padding-left: 24px;
+    padding-right: 24px;
   }
   /* Headline: step down from 46px desktop */
   .hero-inner h1 {
     font-size: 38px;
   }
-  /* Case grid: keep 2-col, tighten gap to match margins */
+  /* Keep 2-col layout; tighten gap to 24px to match side margins */
   .case-grid {
+    grid-template-columns: 1fr 1fr;
     gap: 24px !important;
   }
 }
