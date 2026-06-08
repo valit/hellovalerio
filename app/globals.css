@@ -863,6 +863,12 @@ input:autofill {
     grid-template-columns: 1fr 1fr;
     gap: 24px !important;
   }
+  /* Card image: override inline height and use aspect-ratio so the
+     proportion stays consistently 3:2 across the full 820–959px range */
+  .card-img-wrap {
+    height: auto !important;
+    aspect-ratio: 3 / 2;
+  }
 }
 
 /* ---------- Wide single column (576px–819px): larger margins ---------- */
