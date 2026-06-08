@@ -871,17 +871,38 @@ input:autofill {
   }
 }
 
-/* ---------- Wide single column (576px–819px): larger margins ---------- */
+/* ---------- Wide single column (576px–819px) ---------- */
 @media (min-width: 576px) and (max-width: 819px) {
-  :root {
-    --gutter: 24px;
+  /* 32px side margins — wider than mobile 16px */
+  .container,
+  .hero-inner {
+    padding-left: 32px;
+    padding-right: 32px;
   }
+
+  /* Hero headline: slightly larger than mobile 30px */
+  .hero-inner h1 {
+    font-size: 32px;
+  }
+
+  /* More breathing room between sections than tight mobile */
+  .case-studies,
+  .about {
+    padding-bottom: 72px;
+  }
+
+  /* About actions: left-aligned (mobile centres these) */
+  .about-actions {
+    justify-content: flex-start !important;
+  }
+
+  /* Case study detail page: match wider margins */
   .cs-wrap {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
   .cs-media-outer {
-    margin-left: -24px;
-    margin-right: -24px;
+    margin-left: -32px;
+    margin-right: -32px;
   }
 }
