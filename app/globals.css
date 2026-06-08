@@ -134,16 +134,18 @@ img {
 .hero-bg {
   position: absolute !important;
   top: 0 !important;
-  /* Centre the 1440px image within the viewport so the portrait stays
-     visually stable as the viewport narrows — equal amounts clip from
-     each side rather than the portrait drifting toward the right edge. */
-  left: calc(50% - 720px) !important;
-  width: 1440px !important;
-  max-width: none !important;
   height: auto !important;
   z-index: -1;
   pointer-events: none;
   user-select: none;
+}
+/* Desktop: centre the 1440px image symmetrically so portrait stays stable */
+@media (min-width: 820px) {
+  .hero-bg {
+    left: calc(50% - 720px) !important;
+    width: 1440px !important;
+    max-width: none !important;
+  }
 }
 .hero-inner {
   position: relative;
@@ -655,7 +657,7 @@ input:autofill {
     overflow-x: clip;
     overflow-y: visible;
   }
-  .hero img {
+  .hero-bg {
     position: absolute !important;
     top: 20px !important;
     left: auto !important;
@@ -894,6 +896,11 @@ input:autofill {
   /* About actions: left-aligned (mobile centres these) */
   .about-actions {
     justify-content: flex-start !important;
+  }
+
+  /* Float photo: percentage width so it scales with the card (23% ≈ 110px at 576px) */
+  .polaroid-mobile-float {
+    width: 23% !important;
   }
 
   /* Case study detail page: match wider margins */
