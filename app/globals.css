@@ -871,6 +871,19 @@ input:autofill {
     height: auto !important;
     aspect-ratio: 3 / 2;
   }
+
+  /* Case study page: align wrap margins with 24px breakpoint spec,
+     then break media containers out to full content width.
+     Formula: .cs-body-col starts at (24px + vw/4) from viewport left,
+     so margin-left: -25vw lands the left edge at exactly 24px. */
+  .cs-wrap {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .cs-media-outer {
+    margin-left: -25vw;
+    width: calc(100vw - 48px);
+  }
 }
 
 /* ---------- Wide single column (576px–819px) ---------- */
