@@ -12,19 +12,22 @@ export default function InlineImage({
   alt,
   side = "right",
   caption,
+  columns = 4,
 }: {
   src: string;
   alt: string;
   side?: "left" | "right";
   caption?: string;
+  columns?: 2 | 3 | 4 | 5 | 6;
 }) {
   const { items, openLightbox } = useMediaRegistry();
   const [hovered, setHovered] = useState(false);
 
   const index = items.findIndex((item) => item.src === src);
+  const widthPct = `${(columns / 8) * 100}%`;
 
   return (
-    <figure className={`cs-inline-img cs-inline-img--${side}`}>
+    <figure className={`cs-inline-img cs-inline-img--${side}`} style={{ width: widthPct }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}

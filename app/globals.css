@@ -549,8 +549,8 @@ input:autofill {
 }
 
 /* Inline image (floated alongside body text) */
+/* Width is set as an inline style via the columns prop (columns/8 * 100%) */
 .cs-inline-img {
-  width: 48%;
   margin-bottom: 16px;
 }
 .cs-inline-img--left {
