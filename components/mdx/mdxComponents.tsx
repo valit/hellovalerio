@@ -3,6 +3,7 @@ import P from "./P";
 import Hr from "./Hr";
 import PullQuote from "./PullQuote";
 import Media from "./Media";
+import InlineImage from "./InlineImage";
 
 // Passed to MDXRemote as the components prop.
 // Keys that match HTML tag names (p, hr) override the default element.
@@ -13,4 +14,5 @@ export const mdxComponents = {
   Intro,
   PullQuote,
   Media,
+  InlineImage,
 };

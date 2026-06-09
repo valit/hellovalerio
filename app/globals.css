@@ -548,6 +548,36 @@ input:autofill {
   overflow: hidden;
 }
 
+/* Inline image (floated alongside body text) */
+.cs-inline-img {
+  width: 48%;
+  margin-bottom: 16px;
+}
+.cs-inline-img--left {
+  float: left;
+  margin-right: 24px;
+}
+.cs-inline-img--right {
+  float: right;
+  margin-left: 24px;
+}
+.cs-inline-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 575px) {
+  .cs-inline-img,
+  .cs-inline-img--left,
+  .cs-inline-img--right {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 24px;
+  }
+}
+
 /* Pull quote */
 .cs-pull-quote {
   float: left;

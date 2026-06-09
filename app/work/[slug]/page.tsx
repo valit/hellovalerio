@@ -19,7 +19,9 @@ function getMdxFilePath(slug: string) {
  * navigate through them in document order without client-side registration.
  */
 function extractMediaItems(content: string): MediaItem[] {
-  const regex = /<Media\b[^>]*\bsrc="([^"]+)"(?:[^>]*\bcaption="([^"]*)")?[^>]*\/?>/g;
+  // Match both <Media> and <InlineImage> tags in document order so the
+  // lightbox index is consistent with what each component finds via findIndex.
+  const regex = /<(?:Media|InlineImage)\b[^>]*\bsrc="([^"]+)"(?:[^>]*\bcaption="([^"]*)")?[^>]*\/?>/g;
   const items: MediaItem[] = [];
   let match;
   while ((match = regex.exec(content)) !== null) {
