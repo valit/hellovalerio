@@ -181,7 +181,7 @@ export default function Media({
                 loop
                 muted
                 playsInline
-                style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS }}
+                style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS, pointerEvents: "none" }}
               />
               {hasAudio && (
                 <div
