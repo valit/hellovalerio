@@ -20,6 +20,15 @@ const hindVadodara = Hind_Vadodara({
 export const metadata: Metadata = {
   title: "hellovalerio — Valerio Italiano",
   description: "Senior UX designer with 20+ years of experience, most recently at Google.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", rel: "shortcut icon" },
+      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

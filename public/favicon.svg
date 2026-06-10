@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><circle cx="16" cy="16" r="16" fill="#5D6E77"></circle><g clip-path="url(#clip0_535_885)">
+<mask id="mask0_535_885" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+<circle cx="16" cy="16" r="16" fill="#7696B9"></circle>
+</mask>
+<g mask="url(#mask0_535_885)">
+<path d="M4.8752 13.8729L4.1543 12.6432L15.143 6.20141L15.8639 7.43117L4.8752 13.8729ZM18.7341 5.74862L18.0132 4.51886L25.7216 -1.77448e-07L26.4425 1.22976L18.7341 5.74862ZM25.4899 25.6374L6.28072 11.9474L12.6771 8.19774L24.0347 16.5763L24.2397 16.4561L25.4899 25.6374ZM25.4899 25.6374L22.1769 3.06939L23.653 2.20408L26.679 24.9403L25.4899 25.6374Z" fill="white"></path>
+<path d="M12.5018 25.622V17.1048C12.5018 16.4664 12.3586 15.996 12.0722 15.6936C11.8026 15.3744 11.4152 15.2149 10.9097 15.2149C10.3369 15.2149 9.80626 15.4416 9.31769 15.8952C8.84597 16.3488 8.46691 16.9704 8.18051 17.7599C7.91095 18.5327 7.77617 19.4147 7.77617 20.4058L7.27076 16.752H7.87726C8.2479 16.0632 8.74489 15.492 9.36823 15.0385C9.99158 14.5849 10.8002 14.3581 11.7942 14.3581C12.8219 14.3581 13.6558 14.6269 14.296 15.1645C14.9531 15.6852 15.2816 16.332 15.2816 17.1048V25.622H12.5018ZM3 26V25.37H9.41877V26H3ZM10.5812 26V25.37H17V26H10.5812ZM4.99639 25.622V7.40318H7.77617V25.622H4.99639ZM3 7.62997V7H7.77617V7.62997H3Z" fill="#98ABB3"></path>
+</g>
+</g><defs>
+<clipPath id="clip0_535_885">
+<rect width="32" height="32" fill="white"></rect>
+</clipPath>
+</defs></svg>
