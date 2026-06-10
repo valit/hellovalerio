@@ -71,15 +71,10 @@ function CtrlBtn({
 }) {
   const [hov, setHov] = useState(false);
 
-  const handlePointerDown = (e: React.PointerEvent) => {
-    e.stopPropagation();
-    e.preventDefault(); // suppress the subsequent synthesized click
-    onAction();
-  };
-
   return (
     <button
-      onPointerDown={handlePointerDown}
+      onPointerDown={(e) => e.stopPropagation()}
+      onClick={(e) => { e.stopPropagation(); onAction(); }}
       aria-label={label}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
