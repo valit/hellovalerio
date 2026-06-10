@@ -80,8 +80,8 @@ function CtrlBtn({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "28px",
-        height: "28px",
+        width: "44px",
+        height: "44px",
         background: hov ? "rgba(255,255,255,0.15)" : "transparent",
         border: "none",
         borderRadius: "4px",
@@ -90,6 +90,7 @@ function CtrlBtn({
         lineHeight: 0,
         transition: "background 0.15s",
         flexShrink: 0,
+        WebkitTapHighlightColor: "transparent",
       }}
     >
       {children}
@@ -187,6 +188,7 @@ export default function Media({
               {hasAudio && (
                 <div
                   onClick={e => e.stopPropagation()}
+                  onTouchStart={e => e.stopPropagation()}
                   style={{
                     position: "absolute",
                     bottom: "10px",
