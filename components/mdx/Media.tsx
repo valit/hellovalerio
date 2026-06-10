@@ -61,18 +61,25 @@ function IconSpeakerOff() {
 // ── Control bar button ────────────────────────────────────────────────────────
 
 function CtrlBtn({
-  onClick,
+  onAction,
   label,
   children,
 }: {
-  onClick: (e: React.MouseEvent) => void;
+  onAction: () => void;
   label: string;
   children: React.ReactNode;
 }) {
   const [hov, setHov] = useState(false);
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    e.stopPropagation();
+    e.preventDefault(); // suppress the subsequent synthesized click
+    onAction();
+  };
+
   return (
     <button
-      onClick={onClick}
+      onPointerDown={handlePointerDown}
       aria-label={label}
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
@@ -91,6 +98,7 @@ function CtrlBtn({
         transition: "background 0.15s",
         flexShrink: 0,
         WebkitTapHighlightColor: "transparent",
+        touchAction: "manipulation",
       }}
     >
       {children}
@@ -119,11 +127,6 @@ export default function Media({
 
   const index = items.findIndex((item) => item.src === src);
   const isVideo = /\.(mp4|mov|webm)$/i.test(src);
-
-  const stopProp = (fn: () => void) => (e: React.MouseEvent) => {
-    e.stopPropagation();
-    fn();
-  };
 
   const handlePlayPause = () => {
     const v = videoRef.current;
@@ -187,8 +190,6 @@ export default function Media({
               />
               {hasAudio && (
                 <div
-                  onClick={e => e.stopPropagation()}
-                  onTouchStart={e => e.stopPropagation()}
                   style={{
                     position: "absolute",
                     bottom: "10px",
@@ -203,13 +204,13 @@ export default function Media({
                     WebkitBackdropFilter: "blur(6px)",
                   }}
                 >
-                  <CtrlBtn onClick={stopProp(handlePlayPause)} label={isPlaying ? "Pause" : "Play"}>
+                  <CtrlBtn onAction={handlePlayPause} label={isPlaying ? "Pause" : "Play"}>
                     {isPlaying ? <IconPause /> : <IconPlay />}
                   </CtrlBtn>
-                  <CtrlBtn onClick={stopProp(handleRestart)} label="Restart">
+                  <CtrlBtn onAction={handleRestart} label="Restart">
                     <IconRestart />
                   </CtrlBtn>
-                  <CtrlBtn onClick={stopProp(handleMute)} label={isMuted ? "Unmute" : "Mute"}>
+                  <CtrlBtn onAction={handleMute} label={isMuted ? "Unmute" : "Mute"}>
                     {isMuted ? <IconSpeakerOff /> : <IconSpeakerOn />}
                   </CtrlBtn>
                 </div>
