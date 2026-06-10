@@ -8,7 +8,7 @@ tags:
   - Monetization
   - Configuration
 cardImage: /case-01-google-ads-measurement.jpg
-cardImageAlt: Google Ads measurement setup interface showing business outcome categories on an iPad
+cardImageAlt: Google Ads new campaign setup interface on a laptop showing campaign goal selection
 ---
 
 <Intro>
@@ -27,9 +27,7 @@ Different campaign types had evolved independently over time, introducing their 
 
 What initially appeared to be a collection of unrelated usability issues turned out to have a common root cause. The experience closely mirrored Google's internal campaign structure: campaigns contained ad groups, ad groups contained ads, and advertisers were expected to configure them in exactly that sequence.
 
-<Media src="/case-01-campaigns-1.mp4" caption="Enter caption here." />
-
-But advertisers don't think in terms of entities and save hierarchies. They think about audiences, messaging, budgets, goals, and performance. 
+<Media src="/case-01-campaigns-1.mp4" alt="Animated diagram explaining the Google Ads campaign hierarchy, showing how campaigns, ad groups, and ads are nested within each other" caption="The Google Ads campaign model was built around a hierarchy of campaigns, ad groups, and ads. While powerful, this structure increasingly shaped the setup experience in ways that did not always reflect how advertisers thought about building campaigns." />But advertisers don't think in terms of entities and save hierarchies. They think about audiences, messaging, budgets, goals, and performance. 
 
 The experience had been organized around how Google stored campaign data rather than around the decisions advertisers needed to make. The consequences of this model could be seen throughout the setup flow.
 
@@ -53,7 +51,7 @@ Advertisers could identify conflicts, missing configuration, and performance ris
 
 This was particularly important because a significant percentage of campaigns failed to serve correctly after setup. By surfacing issues earlier and integrating readiness checks directly into campaign creation, the new framework improved campaign completion and serving rates by 6%.
 
-<Media src="/case-01-campaigns-2.mp4" caption="Enter caption here." />
+<Media src="/case-01-campaigns-2.mp4" alt="Walkthrough of the redesigned Google Ads campaign creation flow, showing related decisions grouped together in a flexible modular structure" caption="The redesigned experience brought related decisions together into a flexible workflow that could adapt to different campaign types while maintaining a consistent structure." />
 
 The benefits extended beyond campaign readiness, too. Because the framework separated the setup experience from the underlying engineering hierarchy, it also created a shared foundation that could be adopted across campaign types, reducing fragmentation while giving teams greater flexibility to evolve their experiences over time.
 
