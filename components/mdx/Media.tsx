@@ -152,15 +152,13 @@ export default function Media({
         className="cs-media-outer"
         style={{
           background: MEDIA_BG[variant],
-          cursor: "pointer",
           opacity: hovered ? 0.92 : 1,
           transition: "opacity 0.2s",
         }}
-        onClick={() => index >= 0 && openLightbox(index)}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        {/* Inner container — scales on hover */}
+        {/* Inner container — scales on hover, position:relative anchors overlays */}
         <div
           style={{
             position: "relative",
@@ -183,12 +181,25 @@ export default function Media({
                 playsInline
                 style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS, pointerEvents: "none" }}
               />
+              {/* Transparent lightbox overlay — sits above the video's native
+                  iOS compositor layer so taps are received by HTML, not the
+                  video element. zIndex 1 keeps it below the control bar. */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  zIndex: 1,
+                  cursor: "pointer",
+                }}
+                onClick={() => index >= 0 && openLightbox(index)}
+              />
               {hasAudio && (
                 <div
                   style={{
                     position: "absolute",
                     bottom: "10px",
                     right: "10px",
+                    zIndex: 2,
                     display: "flex",
                     alignItems: "center",
                     gap: "2px",
@@ -216,7 +227,8 @@ export default function Media({
             <img
               src={src}
               alt={caption ?? ""}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS }}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS, cursor: "pointer" }}
+              onClick={() => index >= 0 && openLightbox(index)}
             />
           )}
         </div>
