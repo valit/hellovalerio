@@ -73,7 +73,7 @@ function CtrlBtn({
 
   return (
     <button
-      onPointerDown={(e) => e.stopPropagation()}
+      onTouchEnd={(e) => { e.preventDefault(); e.stopPropagation(); onAction(); }}
       onClick={(e) => { e.stopPropagation(); onAction(); }}
       aria-label={label}
       onMouseEnter={() => setHov(true)}
@@ -190,7 +190,9 @@ export default function Media({
                   inset: 0,
                   zIndex: 1,
                   cursor: "pointer",
+                  touchAction: "manipulation",
                 }}
+                onTouchEnd={(e) => { e.preventDefault(); if (index >= 0) openLightbox(index); }}
                 onClick={() => index >= 0 && openLightbox(index)}
               />
               {hasAudio && (
@@ -227,7 +229,8 @@ export default function Media({
             <img
               src={src}
               alt={caption ?? ""}
-              style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS, cursor: "pointer" }}
+              style={{ width: "100%", height: "auto", display: "block", borderRadius: MEDIA_INNER_RADIUS, cursor: "pointer", touchAction: "manipulation" }}
+              onTouchEnd={(e) => { e.preventDefault(); if (index >= 0) openLightbox(index); }}
               onClick={() => index >= 0 && openLightbox(index)}
             />
           )}
