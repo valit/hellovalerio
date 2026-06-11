@@ -64,7 +64,7 @@ export default function CaseStudyCard({ card }: { card: CardData }) {
       </div>
 
       {/* Content — title + tags */}
-      <div style={{ padding: "20px 40px 32px 24px" }}>
+      <div style={{ padding: "20px 26px 26px 26px" }}>
         <h3
           style={{
             fontFamily: "var(--font-sans)",
