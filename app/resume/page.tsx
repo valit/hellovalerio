@@ -138,7 +138,7 @@ export default function ResumePage() {
         <h2 style={{ ...h2Style, marginTop: "48px" }}>Software</h2>
         <ul style={listStyle}>
           <li style={liStyle}><strong>Design:</strong> expert user of Figma, Sketch, Axure, Adobe Illustrator, Photoshop, and InDesign</li>
-          <li style={liStyle}><strong>Technical:</strong> working knowledge of HTML and CSS</li>
+          <li style={liStyle}><strong>Technical:</strong> working knowledge of HTML, CSS, and Next.js; experience directing and iterating on production web builds using AI-assisted development tools</li>
         </ul>
 
         {/* ── Languages ── */}
