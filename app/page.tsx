@@ -4,9 +4,22 @@ import ContactForm from "@/components/ContactForm";
 import HashScroller from "@/components/HashScroller";
 import { cardData } from "@/data/caseStudies";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Valerio Italiano",
+  jobTitle: "Staff UX Designer",
+  url: "https://hellovaler.io",
+  sameAs: [],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <HashScroller />
 

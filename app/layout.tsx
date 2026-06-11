@@ -18,8 +18,13 @@ const hindVadodara = Hind_Vadodara({
 });
 
 export const metadata: Metadata = {
-  title: "hellovalerio — Valerio Italiano",
-  description: "Senior UX designer with 20+ years of experience, most recently at Google.",
+  title: "Valerio Italiano — UX Designer",
+  description: "Staff UX designer with 20+ years of experience designing complex product experiences. Most recently at Google, working on advertising products.",
+  openGraph: {
+    title: "Valerio Italiano — UX Designer",
+    description: "Staff UX designer with 20+ years of experience designing complex product experiences. Most recently at Google, working on advertising products.",
+    url: "https://hellovaler.io",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", rel: "shortcut icon" },
