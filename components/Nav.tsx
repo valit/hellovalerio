@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 const links = [
@@ -20,6 +20,47 @@ export default function Nav() {
   const router    = useRouter();
   const isHome    = pathname === "/";
   const [open, setOpen] = useState(false);
+  const [translateY, setTranslateY] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(true);
+  const lastScrollY = useRef(0);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 576) {
+        setTranslateY(0);
+        setScrollingUp(true);
+        return;
+      }
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+      const navHeight = headerRef.current?.offsetHeight ?? 60;
+
+      if (delta > 0) {
+        setScrollingUp(false);
+        setTranslateY((prev) => Math.min(prev + delta, navHeight));
+      } else {
+        setScrollingUp(true);
+        setTranslateY(0);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth >= 576) {
+        setTranslateY(0);
+        setScrollingUp(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   function handleSectionLink(e: React.MouseEvent<HTMLAnchorElement>, hash: string) {
     e.preventDefault();
@@ -40,7 +81,14 @@ export default function Nav() {
 
   return (
     <>
-      <header className="site-header">
+      <header
+        ref={headerRef}
+        className="site-header"
+        style={{
+          transform: `translateY(-${translateY}px)`,
+          transition: scrollingUp ? "transform 0.25s ease" : "none",
+        }}
+      >
         <div className="container inner">
           <a href="/" onClick={handleLogoClick} className="wordmark">
             <Image
