@@ -3,14 +3,14 @@ import { CardData } from "@/data/caseStudies";
 
 const CARD_RADIUS = "26px";
 const CARD_SHADOW =
-  "-16px -16px 20px 0 rgba(255,255,255,0.25), 16px 16px 20px 0 rgba(0,0,0,0.08)";
+  "-10px -10px 20px 0 rgba(255,255,255,0.4), 10px 10px 20px 0 rgba(0,0,0,0.07)";
 
 export default function CaseStudyCard({ card }: { card: CardData }) {
   const inner = (
     /* Outer card */
     <div
       style={{
-        background: "#e4e9ec",
+        background: "linear-gradient(to bottom, #e4e7ec, #eef0f4)",
         borderRadius: CARD_RADIUS,
         border: "none",
         boxShadow: CARD_SHADOW,
