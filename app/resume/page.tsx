@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
   title: "Résumé — Valerio Italiano",
-  description: "UX lead with 20 years of experience bridging business strategy and user needs.",
+  description: "UX lead with 20 years of experience across consumer and enterprise products.",
 };
 
 export default function ResumePage() {
@@ -41,7 +41,7 @@ export default function ResumePage() {
         </h1>
 
         <p style={{ ...body, marginBottom: "56px" }}>
-          UX lead with 20 years of experience bridging business strategy and user needs. I create product frameworks, prototypes, and design systems that scale globally and deliver measurable impact for both users and brands.
+          UX lead with 20 years of experience across consumer and enterprise products. Specializing in creating product frameworks that bring clarity and consistency to complex systems.
         </p>
 
         {/* ── Experience ── */}
@@ -52,25 +52,25 @@ export default function ResumePage() {
           org="Google"
           period="2021–2025"
           projects="Unified Measurement Experience, Conversion Setup Simplification"
-          summary="Defined the product vision and unified design framework for Google Ads' measurement setup, aligning Google Analytics and Google Marketing Platform to deliver cohesive advertiser workflows and measurable adoption gains."
+          summary="Defined the vision and design framework for measurement across Google Ads, creating a more coherent and consistent experience aligned with advertisers' goals, workflows, and mental models."
           bullets={[
-            "Defined product vision for the redesign of the entire measurement setup experience, working cross-functionally to unify over a dozen flows and delivering one framework driving a 7.89% uplift in goal activation.",
-            "Streamlined web conversion setup in Google Ads, enabling advertisers to configure web conversions directly in the UI with no code changes.",
+            "Defined and drove the vision for a redesigned measurement setup experience, reframing measurement around how advertisers think rather than how systems are structured.",
+            "Defined a unified measurement model that aligned experiences across Google Ads, Google Analytics, and the wider Google Marketing Platform around a common set of concepts and workflows.",
+            "Simplified web conversion setup, enabling advertisers to configure web conversions directly within Google Ads with reduced technical dependencies.",
           ]}
         />
 
         <Role
           title="Senior UX Designer"
           org="Google"
-          period="2015–2020"
+          period="2015–2021"
           projects="Campaign Creation Frameworks, Setup Flows for Search, Display and Performance Max Campaigns, Creative Management"
-          summary="Shaped the campaign creation and creative management experiences in Google Ads, building frameworks and shared components that scaled across campaign types and streamlined creative asset workflows."
+          summary="Led the design of foundational experiences across Google Ads, creating shared frameworks for campaign creation, creative management, and advertiser workflows."
           bullets={[
-            "Designed the setup experience for flagship campaigns, like Google Search campaigns (driving a +6% improvement in campaign completion and an +8.32% increase in total spend) as well as then-new Performance Max campaigns.",
-            "Designed the framework used for all Google Ads campaign flows.",
-            "Led the design of in-product experiences for managing multimedia ad formats, delivering consistent experiences across campaign types.",
-            `Created shared "Media Picker" component used to select 300,000 assets/day across all campaign and ad types.`,
-            "Designed a scalable ad preview framework supporting dozens of ad types across Google Ads driving consistency across the ecosystem.",
+            "Defined a unified campaign creation model adopted across Google Ads, replacing fragmented product-specific workflows with a consistent foundation for campaign setup.",
+            "Led the design of flagship campaign experiences, including Google Search and Performance Max, applying the new model to simplify campaign creation and improve campaign readiness.",
+            "Created a shared media management experience that became the foundation for creative asset selection across Google Ads.",
+            "Defined a scalable ad preview framework supporting dozens of ad formats and campaign types across Google Ads.",
           ]}
         />
 
@@ -79,10 +79,10 @@ export default function ResumePage() {
           org="UK Home Office / GDS"
           period="2014–2015"
           projects="Online Crime Reporting, Border Security (classified)"
-          summary="Worked with the ministerial department responsible for immigration, policing, counter-terrorism, and border security during the UK government's digital transformation initiative to bring all major public services online."
+          summary="Contributed to the UK government's digital transformation programme, designing public-sector services in policing, border security, and citizen-facing reporting systems."
           bullets={[
-            "Designed and conducted research for an online crime reporting system.",
-            "Launched a live pilot in partnership with two UK police forces.",
+            "Led research and design for a new online crime reporting service.",
+            "Launched a live pilot in partnership with two UK police forces, taking the service from concept to real-world deployment.",
             "Contributed to the development of security systems deployed at the UK border.",
           ]}
         />
@@ -92,11 +92,12 @@ export default function ResumePage() {
           org="British Sky Broadcasting"
           period="2011–2014"
           projects="Account Management App, TV Content Discovery, Online Store, Home Move Online"
-          summary="Worked for Britain's largest commercial broadcaster and provider of satellite, broadband and telephony services on a range of projects across the online store and products area, customer account management and TV content discovery."
+          summary="Led the design of digital products that helped transform how customers discovered content, managed their services, and engaged with Sky beyond the television screen."
           bullets={[
-            "Led UX design for the Sky Service app launch, addressing high-volume customer service requests and reducing call center load through self-serve flows. Reached #1 free app on App Store in 2014.",
-            "Designed the Find & Watch section on Sky.com, helping millions of subscribers discover current and upcoming TV and film content.",
-            "Contributed to key projects across Sky's online store, optimising sign-up and service transfer flows to drive broadband and TV subscriptions.",
+            "Reimagined customer support as a connected service journey, combining digital and human support within a single mobile experience.",
+            "Connected support content, account tools, and service actions into contextual journeys that helped customers move seamlessly from understanding a problem to resolving it.",
+            "Created a shared content discovery framework that unified Sky's digital properties.",
+            "Explored early concepts in personalized discovery, recommendation systems, and natural-language search.",
           ]}
         />
 
@@ -104,50 +105,49 @@ export default function ResumePage() {
           title="UX Consultant"
           org="Freelance"
           period="2010–2011"
-          projects="Taxi Comparison Service, Social Network Concept, Private Club Members' Portal"
-          summary="Worked independently and in collaboration with agencies to deliver end-to-end design solutions for a range of clients and sectors."
-          bullets={[
-            "Partnered directly with clients and agency teams to define and deliver digital services.",
-            "Led workshops to gather requirements, align stakeholders, and shape design direction.",
-            "Created service concepts from idea to launch, collaborating with cross-functional teams.",
-            "Delivered user flows, wireframes, and high-fidelity visual designs across platforms.",
-          ]}
+          summary="Partnered with clients and agencies to design digital products and services across a range of industries, leading projects from discovery and concept development through launch."
+          bullets={[]}
         />
 
         <Role
           title="Interaction Designer"
           org="eFinancialCareers.com / Dice.com"
           period="2004–2008"
-          summary="Led the UX design across the entire eFinancialCareers platform, shaping end-to-end experiences for both jobseekers and recruiters."
-          bullets={[
-            "Responsible for all interaction design across a global network of career sites.",
-            "Delivered user-centered solutions to support job discovery, application flows, and recruiter tools.",
-            "Awarded Best Online Service in 2005 by Recruiter Magazine.",
-          ]}
+          summary="Led UX design across eFinancialCareers' global recruitment platform, shaping experiences for both jobseekers and recruiters across a network of international career sites. Contributed to a platform recognized as Best Online Service by Recruiter Magazine."
+          bullets={[]}
         />
 
         {/* ── Qualifications ── */}
         <h2 style={{ ...h2Style, marginTop: "56px" }}>Qualifications</h2>
         <ul style={listStyle}>
-          <li style={liStyle}>M.S. Human-Centered Systems — City University, London</li>
-          <li style={liStyle}>H.N.D. Dipl. Graphic Design — Middlesex University, London</li>
-          <li style={liStyle}>B.A. Modern Languages — University of Westminster, London</li>
+          <Li>MS Human-Centered Systems — City University, London</Li>
+          <Li>HND Graphic Design — Middlesex University, London</Li>
+          <Li>BA Modern Languages — University of Westminster, London</Li>
         </ul>
 
-        {/* ── Software ── */}
-        <h2 style={{ ...h2Style, marginTop: "48px" }}>Software</h2>
+        {/* ── Skills ── */}
+        <h2 style={{ ...h2Style, marginTop: "48px" }}>Skills</h2>
         <ul style={listStyle}>
-          <li style={liStyle}><strong>Design:</strong> expert user of Figma, Sketch, Axure, Adobe Illustrator, Photoshop, and InDesign</li>
-          <li style={liStyle}><strong>Technical:</strong> working knowledge of HTML, CSS, and Next.js; experience directing and iterating on production web builds using AI-assisted development tools</li>
+          <Li>Product Strategy</Li>
+          <Li>Information Architecture</Li>
+          <Li>Interaction Design</Li>
+          <Li>Design Systems</Li>
+          <Li>User Research</Li>
+          <Li>Prototyping</Li>
+          <Li>AI-assisted product development</Li>
         </ul>
+
+        {/* ── Tools ── */}
+        <h2 style={{ ...h2Style, marginTop: "48px" }}>Tools</h2>
+        <p style={body}>Figma, Axure, Sketch, Adobe Creative Suite</p>
 
         {/* ── Languages ── */}
         <h2 style={{ ...h2Style, marginTop: "48px" }}>Languages</h2>
         <ul style={listStyle}>
-          <li style={liStyle}>French and Italian (fluent)</li>
-          <li style={liStyle}>German (proficient)</li>
-          <li style={liStyle}>Dutch (learning)</li>
-          <li style={liStyle}>ASL (learning)</li>
+          <Li>French and Italian (fluent)</Li>
+          <Li>German (proficient)</Li>
+          <Li>Dutch (learning)</Li>
+          <Li>ASL (learning)</Li>
         </ul>
 
       </main>
@@ -185,16 +185,18 @@ function Role({
       </h3>
       <p style={{ ...meta, marginBottom: projects ? "4px" : "12px" }}>{period}</p>
       {projects && (
-        <p style={{ ...meta, fontStyle: "italic", marginBottom: "12px" }}>
+        <p style={{ ...meta, marginBottom: "12px" }}>
           Projects: {projects}
         </p>
       )}
-      {summary && <p style={{ ...body, marginBottom: "12px" }}>{summary}</p>}
-      <ul style={listStyle}>
-        {bullets.map((b, i) => (
-          <li key={i} style={liStyle}>{b}</li>
-        ))}
-      </ul>
+      {summary && <p style={{ ...body, marginBottom: bullets.length ? "12px" : "0" }}>{summary}</p>}
+      {bullets.length > 0 && (
+        <ul style={listStyle}>
+          {bullets.map((b, i) => (
+            <Li key={i}>{b}</Li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
@@ -225,13 +227,14 @@ const body: React.CSSProperties = {
 const meta: React.CSSProperties = {
   fontFamily: sans,
   fontSize: "13px",
-  color: "#8a97a0",
+  color: "#6b7a83",
   margin: 0,
 };
 
 const listStyle: React.CSSProperties = {
   margin: "0",
-  paddingLeft: "20px",
+  paddingLeft: "0",
+  listStyle: "none",
 };
 
 const liStyle: React.CSSProperties = {
@@ -240,9 +243,27 @@ const liStyle: React.CSSProperties = {
   lineHeight: 1.7,
   color: "#2f3a44",
   marginBottom: "6px",
+  display: "flex",
+  alignItems: "flex-start",
+  gap: "8px",
 };
 
-const linkStyle: React.CSSProperties = {
-  color: "#e07856",
-  textDecoration: "none",
-};
+function Li({ children }: { children: React.ReactNode }) {
+  return (
+    <li style={liStyle}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "4px", color: "#e68483" }}
+      >
+        <path
+          fillRule="evenodd"
+          d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+          clipRule="evenodd"
+        />
+      </svg>
+      <span>{children}</span>
+    </li>
+  );
+}
