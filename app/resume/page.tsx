@@ -14,7 +14,7 @@ export default function ResumePage() {
 
         <div style={{ marginBottom: "40px" }}>
           <a
-            href="/resume.pdf"
+            href="/Valerio_Italiano_resume.pdf"
             style={{
               fontFamily: "var(--font-hind), system-ui, sans-serif",
               fontSize: "13px",

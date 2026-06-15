@@ -78,7 +78,7 @@ export default function Home() {
                 the systems behind them.
               </p>
               <div className="about-actions">
-                <a href="/resume.pdf" download className="resume-link">
+                <a href="/Valerio_Italiano_resume.pdf" download className="resume-link">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/file-download.png" alt="" aria-hidden="true" width={36} height={36} />
                   <span>Download resume</span>
