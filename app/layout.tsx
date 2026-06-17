@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inria_Serif, Hind_Vadodara } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inriaSerif = Inria_Serif({
@@ -49,6 +50,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics gaId="G-MNGEE06DVE" />
       </body>
     </html>
   );
