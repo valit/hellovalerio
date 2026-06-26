@@ -10,9 +10,6 @@ export async function login(formData: FormData) {
   const pw0 = process.env.PORTFOLIO_PASSWORD?.trim();
   const pw1 = process.env.PORTFOLIO_PASSWORD_1?.trim();
 
-  console.log("[auth debug] PORTFOLIO_PASSWORD:", pw0 ? `exists (length ${pw0.length})` : "missing");
-  console.log("[auth debug] PORTFOLIO_PASSWORD_1:", pw1 ? `exists (length ${pw1.length})` : "missing");
-
   let profile: string | null = null;
   if (pw0 && password === pw0) profile = "0";
   else if (pw1 && password === pw1) profile = "1";
