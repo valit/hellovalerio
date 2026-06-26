@@ -2,6 +2,7 @@
 
 import React from "react";
 import { MediaRegistryProvider, MediaItem } from "./mdx/MediaRegistry";
+import ConfidentialityNotice from "./ConfidentialityNotice";
 
 const serif: React.CSSProperties = { fontFamily: "var(--font-inria), 'Inria Serif', Georgia, serif" };
 const sans: React.CSSProperties = { fontFamily: "var(--font-hind), 'Hind Vadodara', system-ui, sans-serif" };
@@ -27,6 +28,7 @@ interface CaseStudyContentProps {
   tags: string[];
   mediaItems: MediaItem[];
   children: React.ReactNode;
+  showConfidentialityNotice?: boolean;
 }
 
 export default function CaseStudyContent({
@@ -37,6 +39,7 @@ export default function CaseStudyContent({
   tags,
   mediaItems,
   children,
+  showConfidentialityNotice = false,
 }: CaseStudyContentProps) {
   return (
     <MediaRegistryProvider items={mediaItems}>
@@ -48,6 +51,13 @@ export default function CaseStudyContent({
             <div className="cs-back-top">
               <BackLink />
             </div>
+
+            {/* Confidentiality notice (profile 1 only) */}
+            {showConfidentialityNotice && (
+              <div style={{ gridColumn: "1 / -1", marginTop: "32px" }}>
+                <ConfidentialityNotice />
+              </div>
+            )}
 
             {/* Title */}
             <h1 className="cs-title" style={serif}>

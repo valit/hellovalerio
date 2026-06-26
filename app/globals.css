@@ -37,7 +37,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: #e6e9ee;
+  background: #E4E8EA;
   color: #2f3a44;
   font-family: var(--font-sans);
   font-size: 16px;
@@ -517,18 +517,24 @@ input:autofill {
   margin-bottom: 24px;
 }
 .cs-meta-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--font-hind), 'Hind Vadodara', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-transform: none;
   color: #D95C5B;
   margin: 0 0 4px;
 }
 .cs-meta-value {
-  color: #5D6E77;
+  font-family: var(--font-hind), 'Hind Vadodara', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  color: #696969;
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
 }
 .cs-body-col {
   grid-column: 3 / 9;

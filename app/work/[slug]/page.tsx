@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -10,8 +11,18 @@ import type { MediaItem } from "@/components/mdx/MediaRegistry";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function getMdxFilePath(slug: string) {
-  return path.join(process.cwd(), "content", "case-studies", `${slug}.mdx`);
+// Slugs that have profile-specific variants (campaigns0/1, measurement0/1)
+const PROFILED_SLUGS = ["campaigns", "measurement"];
+
+async function getMdxFilePath(slug: string) {
+  const dir = path.join(process.cwd(), "content", "case-studies");
+  if (PROFILED_SLUGS.includes(slug)) {
+    const cookieStore = await cookies();
+    const profile = cookieStore.get("portfolio-auth")?.value ?? "0";
+    const suffix = profile === "1" ? "1" : "0";
+    return path.join(dir, `${slug}${suffix}.mdx`);
+  }
+  return path.join(dir, `${slug}.mdx`);
 }
 
 /**
@@ -38,7 +49,10 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const filePath = getMdxFilePath(slug);
+  const cookieStore = await cookies();
+  const profile = cookieStore.get("portfolio-auth")?.value ?? "0";
+  const showConfidentialityNotice = PROFILED_SLUGS.includes(slug) && profile === "1";
+  const filePath = await getMdxFilePath(slug);
 
   if (!fs.existsSync(filePath)) notFound();
 
@@ -56,6 +70,7 @@ export default async function CaseStudyPage({
         year={fm.year}
         tags={fm.tags ?? []}
         mediaItems={mediaItems}
+        showConfidentialityNotice={showConfidentialityNotice}
       >
         <MDXRemote source={content} components={mdxComponents} />
       </CaseStudyContent>
