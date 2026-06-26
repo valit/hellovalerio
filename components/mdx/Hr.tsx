@@ -6,7 +6,7 @@ export default function Hr() {
       style={{
         clear: "both",
         border: "none",
-        borderTop: "1px solid #8a97a0",
+        borderTop: "0.5px solid #98abb3",
         margin: 0,
         marginTop: "48px",
       }}

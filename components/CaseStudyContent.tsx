@@ -12,10 +12,13 @@ function BackLink() {
     <a
       href="/"
       className="cs-back-link"
-      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#2f3a44")}
-      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#5d6e77")}
+      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#5d6e77")}
+      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#8a97a0")}
     >
-      ← Back
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" style={{ width: 24, height: 24, flexShrink: 0 }}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+      </svg>
+      Back
     </a>
   );
 }
@@ -76,32 +79,35 @@ export default function CaseStudyContent({
             {/* Divider */}
             <hr className="cs-rule" />
 
-            {/* Metadata sidebar */}
-            <div className="cs-meta">
-              {[
-                { label: "COMPANY", value: company },
-                { label: "ROLE", value: role },
-                { label: "YEAR", value: year },
-              ].map(({ label, value }) => (
-                <div key={label} className="cs-meta-item">
-                  <p className="cs-meta-label" style={sans}>{label}</p>
-                  <p className="cs-meta-value" style={sans}>{value}</p>
-                </div>
-              ))}
-            </div>
+            {/* Left column: metadata + back link */}
+            <div className="cs-left-col">
+              {/* Metadata sidebar */}
+              <div className="cs-meta">
+                {[
+                  { label: "COMPANY", value: company },
+                  { label: "ROLE", value: role },
+                  { label: "YEAR", value: year },
+                ].map(({ label, value }) => (
+                  <div key={label} className="cs-meta-item">
+                    <p className="cs-meta-label" style={sans}>{label}</p>
+                    <p className="cs-meta-value" style={sans}>{value}</p>
+                  </div>
+                ))}
+              </div>
 
-            {/* Rule between metadata and body — mobile only */}
-            <hr className="cs-body-rule" />
+              {/* Rule between metadata and body — mobile only */}
+              <hr className="cs-body-rule" />
+
+              {/* Back (bottom) */}
+              <div className="cs-back-bottom">
+                <BackLink />
+              </div>
+            </div>
 
             {/* MDX body */}
             <div className="cs-body-col">
               {children}
               <div style={{ clear: "both" }} />
-            </div>
-
-            {/* Back (bottom) */}
-            <div className="cs-back-bottom">
-              <BackLink />
             </div>
 
           </div>

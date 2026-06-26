@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Nav from "@/components/Nav";
+import CaseStudyNav from "@/components/CaseStudyNav";
 import CaseStudyContent from "@/components/CaseStudyContent";
 import { mdxComponents } from "@/components/mdx/mdxComponents";
 import type { MediaItem } from "@/components/mdx/MediaRegistry";
@@ -76,7 +77,8 @@ export default async function CaseStudyPage({
       </CaseStudyContent>
       <footer className="site-footer" style={{ padding: "0 0 28px" }}>
         <div className="container">
-          <hr style={{ border: "none", borderTop: "1px solid #8a97a0", margin: "48px 0" }} />
+          <hr style={{ border: "none", borderTop: "0.5px solid #98abb3", margin: "48px 0 32px" }} />
+          <CaseStudyNav slug={slug} />
           © 2026 Valerio Italiano
         </div>
       </footer>

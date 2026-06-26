@@ -471,7 +471,7 @@ input:autofill {
   align-items: center;
   gap: 14px;
   font-size: 16px;
-  color: #5d6e77;
+  color: #8a97a0;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -504,13 +504,18 @@ input:autofill {
 .cs-rule {
   grid-column: 1 / -1;
   border: none;
-  border-top: 1px solid #8a97a0;
+  border-top: 0.5px solid #98abb3;
   margin: 0;
   margin-top: 48px;
 }
-.cs-meta {
+.cs-left-col {
   grid-column: 1 / 3;
   margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cs-meta {
   align-self: start;
 }
 .cs-meta-item {
@@ -540,7 +545,6 @@ input:autofill {
   grid-column: 3 / 9;
 }
 .cs-back-bottom {
-  grid-column: 1 / 3;
   margin-top: 48px;
 }
 .cs-body-rule {
@@ -809,9 +813,8 @@ input:autofill {
   .cs-title,
   .cs-taglist,
   .cs-rule,
-  .cs-meta,
-  .cs-body-col,
-  .cs-back-bottom {
+  .cs-left-col,
+  .cs-body-col {
     grid-column: 1 / -1;
   }
   .cs-title {
@@ -824,11 +827,16 @@ input:autofill {
   .cs-rule {
     margin-top: 36px;
   }
-  .cs-meta {
+  .cs-left-col {
     margin-top: 32px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cs-meta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0 16px;
+    flex: 1;
   }
   .cs-meta-item {
     margin-bottom: 16px;
@@ -845,6 +853,21 @@ input:autofill {
   }
   .cs-intro {
     margin-top: 40px !important;
+  }
+  .cs-nav-thumb {
+    display: none;
+  }
+  .cs-nav-card {
+    padding: 16px !important;
+    min-height: 126px;
+    align-items: stretch;
+  }
+  .cs-nav-text {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .cs-nav-text--next svg {
+    align-self: flex-end;
   }
   .cs-back-bottom {
     margin-top: 40px;
